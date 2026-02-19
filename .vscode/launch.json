@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run upload_to_testflight.sh",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "bash ${workspaceFolder}/upload_to_testflight.sh",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Debug pyliot uploader",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pyliot.upload_to_testflight_cmd_entry",
+      "python": "${workspaceFolder}/.venv/bin/python3",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
