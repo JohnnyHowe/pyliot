@@ -106,7 +106,11 @@ class UploadParameters:
 
         try:
             value = cast_cli_arg(value, self.meta_data[name]["type"])
-        except:
+        except (TypeError, ValueError) as error:
+            pretty_print(
+                f"<warning>Invalid value for parameter '{name}' from {source.name}: "
+                f"{type(error).__name__}: {error}</warning>"
+            )
             return False
 
         setattr(self, name, value)

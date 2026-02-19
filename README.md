@@ -25,8 +25,6 @@ repo-root/
     pyliot/
       __init__.py
       ...module files...
-  tests/
-    run_all.py
 ```
 
 # Install
@@ -53,12 +51,6 @@ bash upload_to_testflight.sh
 Direct module execution (debugging):
 ```bash
 .venv/bin/python3 -m pyliot.upload_to_testflight_cmd_entry
-```
-
-# Validation
-```bash
-python3 -m py_compile src/pyliot/*.py tests/run_all.py
-python3 tests/run_all.py
 ```
 
 # Variables
@@ -96,7 +88,7 @@ bash upload_to_testflight.sh \
   --api-key-issuer-id "<issuer-id>" \
   --api-key-id "<key-id>" \
   --api-key-content "<p8-content>" \
-  --output-directory "./Builds/iOS" \
+  --ipa-path "./Builds/iOS/build.ipa" \
   --changelog "Internal QA build" \
   --groups "Internal QA" \
   --max-upload-attempts 10 \

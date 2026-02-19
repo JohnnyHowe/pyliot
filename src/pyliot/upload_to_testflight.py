@@ -23,9 +23,14 @@ def upload_to_testflight(
 	for i in range(max_upload_attempts):
 		try:
 			run_attempt(command, attempt_timeout_seconds)
-			break
-		except:
-			pretty_print(f"<warning>Failed upload attempt {i + 1} / {max_upload_attempts}</warning>")
+			return
+		except Exception as error:
+			pretty_print(
+				f"<warning>Failed upload attempt {i + 1} / {max_upload_attempts}: "
+				f"{type(error).__name__}: {error}</warning>"
+			)
+
+	raise RuntimeError("Upload failed: Was no attempt run?.")
 
 
 def _build_command(
