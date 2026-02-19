@@ -6,7 +6,7 @@ Given the App Store Connect API key parts, this makes it into a JSON file and ha
 import atexit
 import json
 from pathlib import Path
-from overwrite_then_delete import overwrite_then_delete as delete_file
+from python_command_line_helpers.overwrite_then_delete import overwrite_then_delete as delete_file
 
 
 class APIKey:

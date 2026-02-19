@@ -16,7 +16,8 @@
       "python": "${workspaceFolder}/.venv/bin/python3",
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
-      "envFile": "${workspaceFolder}/.env"
+      "envFile": "${workspaceFolder}/.env",
+      "args": ["-u"]
     }
   ]
 }
