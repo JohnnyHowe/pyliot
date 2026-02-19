@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyliot"
+version = "0.1.0"
+description = "Upload iOS .ipa builds to TestFlight."
+requires-python = ">=3.10"
+dependencies = [
+    "python-command-line-helpers @ git+https://github.com/JohnnyHowe/python-command-line-helpers.git",
+    "python-command-runner @ git+https://github.com/JohnnyHowe/python-command-runner.git",
+    "python-pretty-print @ git+https://github.com/JohnnyHowe/python-pretty-print.git",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pyliot*"]
