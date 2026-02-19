@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-Core code lives in `src/pyliot/`. The CLI entry point is `src/pyliot/upload_to_testflight_cmd_entry.py`, which loads parameters and calls the upload flow in `src/pyliot/upload_to_test_flight.py`.
+Core code lives in `src/pyliot/`. The CLI entry point is `src/pyliot/upload_to_testflight_cmd_entry.py`, which loads parameters and calls the upload flow in `src/pyliot/upload_to_testflight.py`.
 
 Top-level files:
 - `pyproject.toml`: package metadata and dependencies.

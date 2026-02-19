@@ -1,5 +1,5 @@
 from .upload_parameters import UploadParameters
-from .upload_to_test_flight import upload_to_testflight
+from .upload_to_testflight import upload_to_testflight
 
 
 def upload_to_testflight_cmd_entry():
