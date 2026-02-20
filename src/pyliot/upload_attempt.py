@@ -11,6 +11,8 @@ def run_attempt(command: list[str], timeout_seconds: int) -> None:
 
 	if exit_code == 0:
 		check_for_success_messages(lines)
+	else:
+		raise RuntimeError(f"Upload command failed with exit code {exit_code}.")
 
 
 def _run_attempt_command(command: list[str], timeout_seconds: int) -> tuple[int, list[OutputLine]]:
