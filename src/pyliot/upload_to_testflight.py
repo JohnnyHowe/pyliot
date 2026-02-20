@@ -15,6 +15,7 @@ def upload_to_testflight(
 	groups: list[str] = [],
 	max_upload_attempts: int = 10,
 	attempt_timeout_seconds: int = 600,
+	show_fastlane_logs: bool=False
 ):
 	api_key = APIKey(
 		app_store_connect_api_key_issuer_id,
@@ -26,7 +27,7 @@ def upload_to_testflight(
 
 	for i in range(max_upload_attempts):
 		try:
-			run_attempt(command, attempt_timeout_seconds)
+			run_attempt(command, attempt_timeout_seconds, show_fastlane_logs)
 			return
 		except Exception as error:
 			pretty_print(

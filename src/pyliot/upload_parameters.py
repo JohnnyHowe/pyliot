@@ -34,6 +34,7 @@ class UploadParameters:
     changelog: str
     max_upload_attempts: int = 10
     attempt_timeout: int = 600  # seconds
+    show_fastlane_logs: bool = False
 
     meta_data: dict
 
@@ -46,6 +47,7 @@ class UploadParameters:
         "groups",
         "max_upload_attempts",
         "attempt_timeout",
+        "show_fastlane_logs"
     )
 
     def get_values(self) -> list:

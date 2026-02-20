@@ -67,6 +67,7 @@ CLI arguments override environment variables if both exist.
 | `--groups`| `GROUPS` | `comma-separated string` | ❌ | Tester groups to distribute to (`groupA,groupB`). If empty, build still goes to internal testers. |
 | `--max-upload-attempts`| `MAX_UPLOAD_ATTEMPTS` | `int` | ❌ (10) | Maximum retry attempts for upload. |
 | `--attempt-timeout` | `ATTEMPT_TIMEOUT` | `int` | ❌ (600) | Max time each upload attempt can run in seconds. |
+| `--show-fastlane-logs` | `SHOW_FASTLANE_LOGS` | `bool` | ❌ (false) | 
 
 # Passing Variables
 ## Locally (.env file)
