@@ -7,16 +7,20 @@ from .upload_attempt import run_attempt
 
 
 def upload_to_testflight(
-	api_key_issuer_id: str,
-	api_key_id: str,
-	api_key_content: str,
+	app_store_connect_api_key_issuer_id: str,
+	app_store_connect_api_key_id: str,
+	app_store_connect_api_key_content: str,
 	ipa_path: Path,
 	changelog: str,
 	groups: list[str] = [],
 	max_upload_attempts: int = 10,
 	attempt_timeout_seconds: int = 600,
 ):
-	api_key = APIKey(api_key_issuer_id, api_key_id, api_key_content)
+	api_key = APIKey(
+		app_store_connect_api_key_issuer_id,
+		app_store_connect_api_key_id,
+		app_store_connect_api_key_content,
+	)
 
 	command = _build_command(ipa_path, api_key.file_path, changelog, groups)
 

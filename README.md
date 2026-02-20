@@ -59,9 +59,9 @@ CLI arguments override environment variables if both exist.
 
 | CLI Name | ENV Name | Type | Required (Default) | Description |
 |-|-|-|-|-|
-| `--api-key-issuer-id` | `API_KEY_ISSUER_ID` | `string` | ✅ | Identifies the issuer who created the authentication token.<br>Look for "Issuer ID" on [the App Store Connect API page](https://appstoreconnect.apple.com/access/integrations/api). |
-| `--api-key-id`| `API_KEY_ID` | `string` | ✅ | Look for "Key ID" on your key in [the App Store Connect API page](https://appstoreconnect.apple.com/access/integrations/api). |
-| `--api-key-content`| `API_KEY_CONTENT` | `string` | ✅ | The raw text contents of your API key (`.p8` contents). |
+| `--app-store-connect-api-key-issuer-id` | `APP_STORE_CONNECT_API_KEY_ISSUER_ID` | `string` | ✅ | Identifies the issuer who created the authentication token.<br>Look for "Issuer ID" on [the App Store Connect API page](https://appstoreconnect.apple.com/access/integrations/api). |
+| `--app-store-connect-api-key-id`| `APP_STORE_CONNECT_API_KEY_ID` | `string` | ✅ | Look for "Key ID" on your key in [the App Store Connect API page](https://appstoreconnect.apple.com/access/integrations/api). |
+| `--app-store-connect-api-key-content`| `APP_STORE_CONNECT_API_KEY_CONTENT` | `string` | ✅ | The raw text contents of your API key (`.p8` contents). |
 | `--ipa-path`| `IPA_PATH`| `path`/`string` | ✅ | Path to the .ipa file to upload. |
 | `--changelog`| `CHANGELOG` | `string` | ✅ | Release notes text for this TestFlight upload. |
 | `--groups`| `GROUPS` | `comma-separated string` | ❌ | Tester groups to distribute to (`groupA,groupB`). If empty, build still goes to internal testers. |
@@ -85,9 +85,9 @@ You can pass any variable with CLI flags.
 Example:
 ```bash
 bash upload_to_testflight.sh \
-  --api-key-issuer-id "<issuer-id>" \
-  --api-key-id "<key-id>" \
-  --api-key-content "<p8-content>" \
+  --app-store-connect-api-key-issuer-id "<issuer-id>" \
+  --app-store-connect-api-key-id "<key-id>" \
+  --app-store-connect-api-key-content "<p8-content>" \
   --ipa-path "./Builds/iOS/build.ipa" \
   --changelog "Internal QA build" \
   --groups "Internal QA" \
