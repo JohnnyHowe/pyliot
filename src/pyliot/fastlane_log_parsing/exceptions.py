@@ -1,0 +1,2 @@
+class UnknownUploadException(Exception):
+    pass

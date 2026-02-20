@@ -2,8 +2,8 @@ from pathlib import Path
 from .api_key import APIKey
 from python_command_line_helpers import command_building
 from python_pretty_print import pretty_print
-from python_command_runner import *
 from .upload_attempt import run_attempt
+from .fastlane_log_parsing.exceptions import *
 
 
 def upload_to_testflight(
@@ -29,7 +29,7 @@ def upload_to_testflight(
 		try:
 			run_attempt(command, attempt_timeout_seconds, show_fastlane_logs)
 			return
-		except Exception as error:
+		except UnknownUploadException as error:
 			pretty_print(
 				f"<warning>Failed upload attempt {i + 1} / {max_upload_attempts}: "
 				f"{type(error).__name__}: {error}</warning>"
