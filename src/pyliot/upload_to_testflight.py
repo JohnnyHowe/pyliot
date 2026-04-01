@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Optional
 from .api_key import APIKey
 from python_command_line_helpers import command_building
 from python_pretty_print import pretty_print
@@ -11,7 +12,7 @@ def upload_to_testflight(
 	app_store_connect_api_key_id: str,
 	app_store_connect_api_key_content: str,
 	ipa_path: Path,
-	changelog: str,
+	changelog: Optional[str],
 	groups: list[str] = [],
 	max_upload_attempts: int = 10,
 	attempt_timeout_seconds: int = 600,
@@ -41,13 +42,15 @@ def upload_to_testflight(
 def _build_command(
 	ipa_path: Path,
 	api_key_path: Path,
-	changelog: str,
+	changelog: Optional[str],
 	groups: list[str],
 ) -> list[str]:
 	command = ["fastlane", "pilot", "upload", "--verbose"]
 	command += ["-i", ipa_path]
 	command += ["--api-key-path", api_key_path]
-	command += ["--changelog", changelog]
+
+	if changelog != None:
+		command += ["--changelog", f"\"{changelog}\""]
 
 	if len(groups) > 0:
 		command += ["--groups", ",".join(groups)]
